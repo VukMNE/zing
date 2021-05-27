@@ -1,1 +1,98 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import 'zing-animations.css';
+body {
+  padding: 0;
+  margin: 0;
+
+  --col-bckg: #678D58;
+  --col-alt: #F6E7CB;
+  --col-action: #334E58;
+  --col-action-light: #909CC2;
+}
+
+.wt {
+  color: #fff;
+}
+S
+
+.w100 {
+  width: 100%;
+}
+
+.h100 {
+  height: 100%;
+}
+
+.f-r {
+  display: flex;
+  flex-direction: row;
+}
+
+.f-c {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+
+.fs-7 {
+  font-size: 7px;
+}
+
+.fs-8 {
+  font-size: 8px;
+}
+
+.fs-9 {
+  font-size: 9px;
+}
+
+
+
+.fs-10 {
+  font-size: 10px;
+}
+
+.fs-11 {
+  font-size: 11px;
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+
+.fs-13 {
+  font-size: 13px;
+}
+
+.fs-14 {
+  font-size: 14px;
+}
+
+.fs-15 {
+  font-size: 15px;
+}
+
+.fs-16 {
+  font-size: 16px;
+}
+
+.fs-17 {
+  font-size: 17px;
+}
+
+.fs-18 {
+  font-size: 18px;
+}

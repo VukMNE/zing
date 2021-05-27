@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "zing"
+    }
+  },
+  "defaultProject": "zing",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -1,0 +1,31 @@
+.user-icon {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  z-index: 100;
+}
+
+.ribbon {
+  position: relative;
+  width: 150px;
+  height: 45px;
+  margin-left: -15px;
+  display: inline;
+  z-index: 99;
+  border-top-right-radius: 22.5px;
+  border-bottom-right-radius: 22.5px;
+
+}
+
+.ribbon.me {
+  background-color: #007EA7;
+}
+
+.ribbon.com {
+  background-color: #A53860;
+}
+
+.ribbon-text {
+  padding-left: 24px;
+}

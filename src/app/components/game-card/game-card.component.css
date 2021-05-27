@@ -1,0 +1,84 @@
+.card {
+  transition: 0.4s;
+}
+
+.my {
+  height: 150px; 
+	width: 100px;
+	display: inline;
+	float: left;
+	margin-right: 5px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 5px;
+}
+
+.my:hover {
+  cursor: pointer;
+}
+
+.in-process {
+  height: 75px; 
+	width: 50px;
+	display: inline;
+	float: left;
+	margin-right: 5px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 5px;
+}
+
+.opponent {
+  height: 75px; 
+	width: 50px;
+	display: inline;
+	float: left;
+	margin-right: 5px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 5px;
+}
+
+
+.table {
+  position: relative;
+	left: 150px;
+	margin-bottom: -90px;
+	height: 120px; 
+	width: 80px;
+	margin-right: 5px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 5px;
+}
+
+
+.card.my:hover {
+  transform:scale(1.05);
+}
+
+/* @-webkit-keyframes getBig{from{-webkit-transform:scale3d(1, 1, 1);
+  transform:scale3d(1, 1, 1);
+  }
+  50%{-webkit-transform:scale3d(1.05, 1.05, 1.05);
+  transform:scale3d(1.05, 1.05, 1.05);
+  }
+  to{-webkit-transform:scale3d(1, 1, 1);
+  transform:scale3d(1.05, 1.05, 1.05);
+  }
+  }
+  
+  @keyframes getBig{from{-webkit-transform:scale3d(1, 1, 1);
+  transform:scale3d(1, 1, 1);
+  }
+  50%{-webkit-transform:scale3d(1.05, 1.05, 1.05);
+  transform:scale3d(1.05, 1.05, 1.05);
+  }
+  to{-webkit-transform:scale3d(1, 1, 1);
+  transform:scale3d(1.05, 1.05, 1.05);
+  }
+  }
+  
+  .getBig{-webkit-animation-name:getBig;
+    animation-name:getBig;
+  } */

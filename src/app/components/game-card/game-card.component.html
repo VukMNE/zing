@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <div class="card {{ whose }} animated {{ visited ? 'get-big tada' : '' }}  {{ whose == 'in-process' ? 'flip' : ''}}
+  {{ isPlayed ?  'cardPlayedAnimation' : '' }}" (mouseover)="onMouseOver()" (mouseleave)="onMouseLeave()"
+  (click)="playTheCard()"
+  [ngStyle]="{'background-image': (whose != 'opponent') ?
+   'url(../../assets/img/karte/' +  getImageName() + ')' : 'url(../../assets/img/karte/back-of-the-card.jpg)',
+    'z-index': (whose == 'my' || whose == 'opponent') ? 1 : index}">
+  </div>
+  <div *ngIf="whose == 'my'" class="heuristic-score">
+    <span class="wt">{{ score }}</span>
+  </div>
+</div>

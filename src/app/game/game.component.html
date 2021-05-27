@@ -1,0 +1,43 @@
+<div class="gameplay w100 h100 f-r">
+  <div class="l-segment justify-content-center flex-1 f-c">
+
+    <div class="deck">
+    </div>
+
+    <div *ngIf="!gameStarted" class="start-game">
+      <button class="btn-info" (click)="startGame()">Start the game</button>
+    </div>
+
+    
+
+  </div>
+
+  <div class="game-table flex-3 f-c">
+
+    <div class="opp-cards f-r">
+      <app-game-card *ngFor="let oppCard of opponentCards" [card]="oppCard" [whose]="'opponent'">
+
+      </app-game-card>
+    </div>
+
+    <div class="board animated ">
+      <app-game-card *ngFor="let tCard of cardsOnTable; let i = index" [ngStyle]="{'z-index': i + 1}" [card]="tCard" [whose]="'table'" [index]="i + 1">
+
+      </app-game-card>
+    </div>
+
+    <div class="my-cards f-r">
+      <app-game-card *ngFor="let mCard of myCards; let i = index" [card]="mCard" [whose]="'my'" [index]="i + 1" [score]="myScores[i]">
+
+      </app-game-card>
+    </div>
+
+
+  </div>
+
+  <div class="score-and-help flex-1 f-c">
+    <app-points-box [type]="2" [playerName]="'Computer'" [points]="oppPoints"></app-points-box>
+    <app-points-box [type]="1" [playerName]="'Me'" [points]="myPoints"></app-points-box>
+  </div>  
+
+</div>

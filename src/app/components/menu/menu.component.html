@@ -1,0 +1,33 @@
+<div class="menu-page f-c justify-content-center w100 h100">
+  <div class="menu-container">
+    <div class="menu-inner m-5 f-c">
+      <div class="brand">
+        <img src="../../../assets/img/zing_logo.png" alt="Zing" class="brand-img">
+      </div>
+  
+      <div class="options mt-3 f-c" routerLinkActive="true">
+  
+        <div class="menu-option p-2 m-1" [routerLink]="'game/random'">
+          <span>{{ 'vsRandom' | translate }} </span>
+        </div>
+
+        <div class="menu-option p-2 m-1" [routerLink]="'game/basic-heuristic'">
+          <span>{{ 'vsBasicHeuristic' | translate }} </span>
+        </div>
+
+        <div class="menu-option p-2 m-1" [routerLink]="'game/heuristic'">
+          <span>{{ 'vsAdvancedHeuristic' | translate }} </span>
+        </div>
+  
+        <div class="menu-option p-2 m-1" [routerLink]="'game/monte-carlo'">
+          <span>{{ 'vsMonteCarlo' | translate }} </span>
+        </div>
+  
+        
+  
+      </div>
+    </div>
+    
+
+  </div>
+</div>

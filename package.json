@@ -19,8 +19,14 @@
     "@angular/platform-browser": "~9.1.6",
     "@angular/platform-browser-dynamic": "~9.1.6",
     "@angular/router": "~9.1.6",
+    "@ngx-translate/core": "^13.0.0",
+    "@ngx-translate/http-loader": "^6.0.0",
+    "@types/underscore": "^1.11.2",
+    "ngx-translate": "0.0.1-security",
     "rxjs": "~6.5.4",
+    "sweetalert2": "^11.0.12",
     "tslib": "^1.10.0",
+    "underscore": "^1.13.1",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
