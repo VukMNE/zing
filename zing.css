@@ -1,0 +1,185 @@
+	#pored{
+		display:inline;
+		float:left;
+	}
+	
+	#sto{
+	height: 600px;
+	width: 700px;
+	background-color: #009800;
+	margin: 0px 0px 0px 150px;
+	overflow: hidden;
+	display:inline;
+	float:left;
+	}
+	
+	.mypts {
+		margin-top: 300px;
+	}
+	
+	#njegoveKarte{
+		margin: 5px 0px 125px 170px;
+
+		
+	}
+	
+	#gameplay{
+		margin: 0px 0px 0px 10px;
+
+	}
+	
+
+	
+	
+	#špil{
+	display: inline;
+	float: left;
+	background-image: url(karte/poledjina.jpeg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 150px;
+	width: 95px;
+	border-radius: 5px;
+	box-shadow: 8px 8px 2px #cba;
+	margin-top: 35px;
+	}
+	
+	
+	#ispodSaca{
+	display: inline;
+	float: left;
+	height: 75px;
+	width: 95px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 5px;
+	transform: rotate(90deg);
+	margin:72px 0px 0px -5px;
+	}
+	
+	#talon{
+	display: inline;
+	float: left;
+	width: 450px;
+	height: 250px;
+	margin-bottom: 50px;
+	
+	}
+	
+	#dugmad{
+	display: block;
+	padding: 165px 0px 0px 8px;
+	}
+	
+	#mojiPoeni{
+		position: relative;
+		left: 10px;
+		top: 250px;
+	}
+	
+	#njegoviPoeni{
+		position: absolute;
+		left: 300px;
+		top: 10px;
+	}
+	
+	#mojeKarte{
+		position: relative;
+		left: 170px;
+		float: left;
+		display: inline;
+		
+	}
+	
+	.bala{
+		position: relative;
+		background-image: url(karte/poledjina.jpeg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		height: 100px;
+		width: 67px;
+		left: 0px;
+		margin-bottom: -80px;
+		border-radius: 5px;
+	}
+	
+	.balaCom{
+		position: relative;
+		background-image: url(karte/poledjina.jpeg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		height: 100px;
+		width: 67px;
+		left: 0px;
+		margin-bottom: -80px;
+		border-radius: 5px;
+	}
+	
+	.fino-dugme{
+	border-radius: 5px;
+	color: #fff;
+	outline: none;
+	background-color: #66d;
+	font-size: 1.4em;
+	}
+	
+	.letac{
+	height: 313px;
+	width: 235px;
+	background-image: url(slike/zing-cards_logo.png);
+	background-size: auto;
+	background-repeat: no-repeat;
+	z-index: 20;
+	}
+	
+	
+	
+	.tKarta{
+	position: relative;
+	left: 150px;
+	margin-bottom: -90px;
+	z-index: number;
+	height: 120px; 
+	width: 80px;
+	margin-right: 5px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 5px;
+	
+	}
+	
+	.nKarta{
+	height: 75px; 
+	width: 50px;
+	display: inline;
+	float: left;
+	margin-right: 5px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 5px;
+	
+	}
+	
+	.mKarta{
+	height: 150px; 
+	width: 100px;
+	display: inline;
+	float: left;
+	margin-right: 5px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 5px;
+	
+	}
+	
+	#pravila{
+		margin-left: 0px;
+		display: inline;
+	}
+	
+	#pravila ul{
+		list-style-type: none;
+	}
+	
+	
+	
