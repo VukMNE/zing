@@ -26,7 +26,7 @@
       </app-game-card>
     </div>
 
-    <div class="my-cards f-r">
+    <div *ngIf="myScores !== undefined" class="my-cards f-r">
       <app-game-card *ngFor="let mCard of myCards; let i = index" [card]="mCard" [whose]="'my'" [index]="i + 1" [score]="myScores[i]">
 
       </app-game-card>

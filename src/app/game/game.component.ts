@@ -29,6 +29,9 @@ export class GameComponent implements OnInit {
   gameStarted = false;
   myScores: any;
   oppScores: any;
+  lastTakenBy = 1;
+  myPointsLastRound = 0;
+  oppPointsLastRound = 0;
 
   constructor(private utilService: UtilService,
               private gameService: GameService,
@@ -77,8 +80,12 @@ export class GameComponent implements OnInit {
     // console.log('Evo me');
     if(this.deck.length == 0) {
       if(this.myPoints >= 101 || this.oppPoints >= 101) {
+        this.collectionTookPlace(this.lastTakenBy);
         Swal.fire('Game ended');
       } else {
+        this.collectionTookPlace(this.lastTakenBy);
+        this.myPointsLastRound = this.myPoints - this.myPointsLastRound;
+        this.oppPointsLastRound = this.oppPoints - this.oppPointsLastRound;
         Swal.fire('Round ended');
         this.startGame();
       }
@@ -89,11 +96,17 @@ export class GameComponent implements OnInit {
           this.deck.shift();
         }
 
-        this.sendMyCardsToServer();
+        if(this.aiAgent != 'monte-carlo') {
+          this.sendMyCardsToServer();
+        }
 
         for(let i = 1; i <= 4; i++) {
           this.opponentCards.push(this.deck[0]);
           this.deck.shift();
+        }
+
+        if(this.aiAgent == 'monte-carlo') {
+          this.sendMyCardsToServer();
         }
       } else {
         for(let i = 1; i <= 4; i++) {
@@ -205,6 +218,7 @@ export class GameComponent implements OnInit {
 
   async collectionTookPlace(whoseMove) {
     let cardsShouldBeDealt = false;
+    this.lastTakenBy = whoseMove;
     if(whoseMove == 1) {
       this.myTakenCards = this.myTakenCards.concat(this.cardsOnTable);
       this.myPoints += this.countPointsFromCards(this.cardsOnTable);
@@ -256,14 +270,38 @@ export class GameComponent implements OnInit {
   }
 
   async sendMyCardsToServer() {
-    const obj = {
-      my_cards: this.myCards,
-      cards_on_table: this.cardsOnTable,
-      cards_already_played: this.myTakenCards.concat(this.opponentTakenCards),
-      deck: this.deck
+
+    let obj = {}
+    
+    if(this.aiAgent == 'monte-carlo') {
+      obj = {
+        my_cards: this.myCards,
+        cards_on_table: this.cardsOnTable,
+        cards_already_played: this.myTakenCards.concat(this.opponentTakenCards),
+        deck: this.deck,
+        my_taken_cards: this.myTakenCards,
+        opp_taken_cards: this.opponentTakenCards,
+        opp_cards: this.opponentCards,
+        my_points_in_round: this.myPoints - this.myPointsLastRound,
+        opp_points_in_round: this.oppPoints - this.oppPointsLastRound,
+        my_points: this.myPoints,
+        opp_points: this.oppPoints,
+        last_taken_by: this.lastTakenBy,
+        whose_turn: 0
+      }
+
+    } else {
+      obj = {
+        my_cards: this.myCards,
+        cards_on_table: this.cardsOnTable,
+        cards_already_played: this.myTakenCards.concat(this.opponentTakenCards),
+        deck: this.deck,
+        opp_cards: this.opponentCards
+      }
     }
     console.log(obj)
-    return this.dataService.postAnyData('heuristic', obj).subscribe((data) => {
+    let url = this.aiAgent == 'random' ? 'heuristic' : this.aiAgent;
+    return this.dataService.postAnyData(url, obj).subscribe((data) => {
       console.log('Stigli podaci');
       console.log(data);
       this.myScores = data;
@@ -273,13 +311,37 @@ export class GameComponent implements OnInit {
   }
 
   sendOppCardsToServer(url): Observable<any> {
-    const obj = {
-      my_cards: this.opponentCards,
-      opp_cards: this.opponentCards,
-      cards_on_table: this.cardsOnTable,
-      cards_already_played: this.myTakenCards.concat(this.opponentTakenCards),
-      deck: this.deck
+
+    
+    let obj = {}
+    
+    if(this.aiAgent == 'monte-carlo') {
+      obj = {
+        my_cards: this.opponentCards,
+        opp_cards: this.myCards,
+        cards_on_table: this.cardsOnTable,
+        cards_already_played: this.myTakenCards.concat(this.opponentTakenCards),
+        deck: this.deck,
+        my_taken_cards: this.opponentTakenCards,
+        opp_taken_cards: this.myTakenCards,
+        opp_points_in_round: this.myPoints - this.myPointsLastRound,
+        my_points_in_round: this.oppPoints - this.oppPointsLastRound,
+        my_points: this.oppPoints,
+        opp_points: this.myPoints,
+        last_taken_by: this.lastTakenBy,
+        whose_turn: 0
+      }
+
+    } else {
+      obj = {
+        my_cards: this.opponentCards,
+        cards_on_table: this.cardsOnTable,
+        cards_already_played: this.myTakenCards.concat(this.opponentTakenCards),
+        deck: this.deck,
+        opp_cards: this.myCards
+      }
     }
+
     return this.dataService.postAnyData(url, obj)
 
   }
